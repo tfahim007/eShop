@@ -2,7 +2,8 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            Tahmid Fahim
+           <h2>asd</h2>
+           Tahmid
         </div>
     </div>
 

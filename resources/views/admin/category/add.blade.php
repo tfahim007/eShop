@@ -26,12 +26,12 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="">Status</label>
-                        <input type="checkbox"  name='status'>
+                        <input type="checkbox"  name='status' class="form-control">
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label for="Name">Popular</label>
-                        <input type="checkbox"  name='popular'>
+                        <input type="checkbox"  name='popular' class="form-control">
                     </div>
 
                     <div class="col-md-12-mb-3">
@@ -49,7 +49,7 @@
                         <textarea name="meta_description" class="form-control" rows="3"></textarea>
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-12 ">
                         <input type="file" class="form-control" name="image">
                     </div>
 
@@ -62,5 +62,6 @@
         </div>
     </div>
 
+    
    
 @endsection

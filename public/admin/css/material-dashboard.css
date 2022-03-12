@@ -2473,8 +2473,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #000;
-  background-color: #e91e63;
-  border-color: #e91e63; }
+  background-color: green;
+  border-color: green; }
   .btn-primary:hover {
     color: #000;
     background-color: #ec407a;
@@ -2613,8 +2613,8 @@ textarea.form-control-lg {
 
 .btn-danger {
   color: #000;
-  background-color: #F44335;
-  border-color: #F44335; }
+  background-color: red;
+  border-color: red; }
   .btn-danger:hover {
     color: #000;
     background-color: #f65f53;
