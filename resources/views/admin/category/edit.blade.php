@@ -2,7 +2,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            Add Category
+            Edit Category
         </div>
         <hr>
         <div class="card-body" >
