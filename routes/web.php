@@ -30,6 +30,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/',[FrontController::class,'index']);
 Route::get('category',[FrontController::class,'category']);
 Route::get('view-category/{slug}',[FrontController::class,'viewCategory']);
+Route::get('category/{slug}/{prodslug}',[FrontController::class,'viewProduct']);
 
 // Admin
 Route::group(['middleware' => ['auth','isAdmin']], function () {

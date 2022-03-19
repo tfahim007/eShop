@@ -37,13 +37,15 @@
                     <div class="owl-carousel featured-carousel owl-theme">
                         @foreach ($featured_category as $item)
                             <div class="item"> 
-                                <div class="card">
-                                    <img src="{{ asset('assets/uploads/category/'.$item->image) }}" class = "cate-image" alt="Category Image">
-                                    <div class="card-body">
-                                        <h5>{{ $item->name}}</h5>
-                                        <p>{{ $item->description }}</p>
+                                <a href="{{url('view-category',$item->slug)}}">
+                                    <div class="card">
+                                        <img src="{{ asset('assets/uploads/category/'.$item->image) }}" class = "cate-image" alt="Category Image">
+                                        <div class="card-body">
+                                            <h5>{{ $item->name}}</h5>
+                                            <p>{{ $item->description }}</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         @endforeach ($featured_cateogory as $item)
                     </div>

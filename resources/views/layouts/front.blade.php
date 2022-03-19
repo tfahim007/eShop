@@ -22,7 +22,11 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend/css/owl.theme.default.min.css')}}">
-
+    <style>
+      a{
+        text-decoration: none !important;
+      }
+    </style>
 </head>
 
 <body>
