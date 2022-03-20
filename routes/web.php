@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 
 use App\Http\Controllers\Frontend\FrontController;
+use App\Http\Controllers\Frontend\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,16 @@ Route::get('/',[FrontController::class,'index']);
 Route::get('category',[FrontController::class,'category']);
 Route::get('view-category/{slug}',[FrontController::class,'viewCategory']);
 Route::get('category/{slug}/{prodslug}',[FrontController::class,'viewProduct']);
+
+
+
+// CArt
+Route::middleware(['auth'])->group(function (){
+    
+    Route::post('add-to-cart',[CartController::class,'addProduct']);
+});
+
+
 
 // Admin
 Route::group(['middleware' => ['auth','isAdmin']], function () {

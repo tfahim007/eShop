@@ -25,7 +25,22 @@
     <style>
       a{
         text-decoration: none !important;
+        
       }
+
+      icon-shape {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .icon-sm {
+            width: 2rem;
+            height: 2rem;
+            
+        }
     </style>
 </head>
 
@@ -45,7 +60,7 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-  
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   @if((session('status'))){
     <script>
@@ -54,6 +69,7 @@
   @endif
   
   @yield('scripts')
+  
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
