@@ -32,13 +32,15 @@ Route::get('/',[FrontController::class,'index']);
 Route::get('category',[FrontController::class,'category']);
 Route::get('view-category/{slug}',[FrontController::class,'viewCategory']);
 Route::get('category/{slug}/{prodslug}',[FrontController::class,'viewProduct']);
+Route::post('add-to-cart',[CartController::class,'addProduct']);
+Route::post('delete-cart-item',[CartController::class,'deleteProduct']);
 
 
-
-// CArt
+// Cart
 Route::middleware(['auth'])->group(function (){
-    
-    Route::post('add-to-cart',[CartController::class,'addProduct']);
+    Route::get('cart',[CartController::class,'viewCart']);
+   
+
 });
 
 
