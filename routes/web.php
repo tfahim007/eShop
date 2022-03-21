@@ -34,6 +34,7 @@ Route::get('view-category/{slug}',[FrontController::class,'viewCategory']);
 Route::get('category/{slug}/{prodslug}',[FrontController::class,'viewProduct']);
 Route::post('add-to-cart',[CartController::class,'addProduct']);
 Route::post('delete-cart-item',[CartController::class,'deleteProduct']);
+Route::post('update-cart',[CartController::class,'updateCart']);
 
 
 // Cart

@@ -1102,7 +1102,7 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('admin/js/material-dashboard.min.js?v=3.0.0')}}"></script>
 
-  t
+  
 </body>
 
 </html>
