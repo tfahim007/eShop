@@ -80,7 +80,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         var prod_id = $(this).closest('.product_data').find('.prod_data').val();
-        var prod_qty= $(this).closest('.product_data').find('.qty-input').val();
+        var prod_qty = $(this).closest('.product_data').find('.qty-input').val();
 
         $.ajaxSetup({
             headers:{
@@ -93,11 +93,11 @@ $(document).ready(function () {
             url: "/update-cart",
             data: {
                 'prod_id' : prod_id,
-                'prod_qty' : prod_qty,
+                'prod_qty': prod_qty,
                 
             },
             success: function (response){
-               
+              
                 window.location.reload();
                 
             }
@@ -105,6 +105,7 @@ $(document).ready(function () {
         });
 
         
-    });
 
+        
+    });
 });

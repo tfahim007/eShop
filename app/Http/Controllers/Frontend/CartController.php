@@ -70,14 +70,12 @@ class CartController extends Controller
 
             $prod_id = $req->input('prod_id');
             $prod_qty = $req->input('prod_qty');
-            
             if(Cart::where('prod_id',$prod_id)->where('user_id',Auth::id())->exists()){
-                $cart = Cart::where('prod_id',$prod_id)->where('user_id',Auth::id())->first();
-                $cart->prod_qty = $prod_qty;
-                
-                $cart->update();
+                $cartitem = Cart::where('prod_id',$prod_id)->where('user_id',Auth::id())->first();
+                $cartitem->prod_qty = $prod_qty;
+                $cartitem->update();
 
-                return response()->json(['status'=>"Item Removed Successfully"]);
+                return response()->json(['status'=>"Quantity updated Successfully"]);
             }
 
         }
