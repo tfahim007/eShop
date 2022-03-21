@@ -17,6 +17,9 @@
 <div class="container my-5">
     <div class="card shadow ">
         <div class="card-body">
+            @php
+                $total=0;
+            @endphp
             @foreach ($cartitems as $item)
                 <div class="row shadow product_data">
 
@@ -33,9 +36,9 @@
                         
                         <label for="Quantity">Quantity</label>
                         <div class="input-group text-center mb-3" style="width:120px">
-                            <button class="input-group-text decrement-btn">-</button>
+                            <button class="input-group-text changeQuantity decrement-btn">-</button>
                             <input type="text" class="form-control qty-input text-center" value="{{$item->prod_qty}}">
-                            <button class="input-group-text increment-btn">+</button>
+                            <button class="input-group-text changeQuantity increment-btn">+</button>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -43,10 +46,19 @@
                     </div>
                     <hr>
                 </div>
+                @php
+                    $total+= $item->products->selling_price * $item->prod_qty;
+                @endphp
             @endforeach
                 
             </div>
+            <div class="card-footer">
+                <h6> Total Price: {{$total}}
+                    <button class="btn btn-success float-end">Checkout</button>
+                </h6>
+            </div>
         </div>
+            
     </div>
 </div>
 @endsection

@@ -68,11 +68,43 @@ $(document).ready(function () {
             },
             success: function (response){
                 window.location.reload();
-                swal("",response.status,"");
+                swal("",response.status,"success");
             }
         
         });
 
         
     });
+
+    $('.changeQuantity').click(function(e){
+        e.preventDefault();
+
+        var prod_id = $(this).closest('.product_data').find('.prod_data').val();
+        var prod_qty= $(this).closest('.product_data').find('.qty-input').val();
+
+        $.ajaxSetup({
+            headers:{
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            method: "POST",
+            url: "/update-cart",
+            data: {
+                'prod_id' : prod_id,
+                'prod_qty' : prod_qty,
+                
+            },
+            success: function (response){
+               
+                window.location.reload();
+                
+            }
+        
+        });
+
+        
+    });
+
 });

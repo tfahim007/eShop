@@ -64,4 +64,27 @@ class CartController extends Controller
         }
 
     }
+
+    public function updateCart(Request $req){
+        if(Auth::check()){
+
+            $prod_id = $req->input('prod_id');
+            $prod_qty = $req->input('prod_qty');
+            
+            if(Cart::where('prod_id',$prod_id)->where('user_id',Auth::id())->exists()){
+                $cart = Cart::where('prod_id',$prod_id)->where('user_id',Auth::id())->first();
+                $cart->prod_qty = $prod_qty;
+                
+                $cart->update();
+
+                return response()->json(['status'=>"Item Removed Successfully"]);
+            }
+
+        }
+        else{
+
+            return response()->json(['status'=>"Login To Continue"]); 
+        }
+
+    }
 }
