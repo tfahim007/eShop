@@ -46,8 +46,8 @@
                                                 <td>{{ $item->products->name }}</td>
                                                 <td> {{$item->prod_qty}}</td>
                                                 <td>{{$item->price}}</td>
-                                                <td>
-                                                    <img src="{{asset('assets/uploads/product'.$item->products->image)}}" alt="Product Image">
+                                                <td class="text-center">
+                                                    <img src="{{asset('assets/uploads/product/'.$item->products->image)}}" style="width:100px;" alt="Product Image">
                                                 </td>
                                             </tr>
                                         @endforeach

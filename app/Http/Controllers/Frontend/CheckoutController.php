@@ -27,8 +27,8 @@ class CheckoutController extends Controller
             $product->qty-= $item->prod_qty;
             $product->update();
         }
-        $cartitems = Cart::where('user_id',Auth::id())->get();
-        return view('frontend.checkout',["collections"=>$cartitems]);
+        $cartitems_updated = Cart::where('user_id',Auth::id())->get();
+        return view('frontend.checkout',["collections"=>$cartitems_updated]);
     }
 
     public function placeOrder(Request $req){
