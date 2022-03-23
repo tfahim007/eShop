@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('division');
             $table->string('country');
+            $table->floatval('total');
             $table->string('pincode');
             $table->tinyInteger('status')->default('0');
             $table->string('message')->nullable();

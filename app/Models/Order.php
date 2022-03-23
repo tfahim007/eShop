@@ -20,9 +20,14 @@ class Order extends Model
         'city',
         'division',
         'country',
+        'total',
         'pincode',
         'status',
         'message',
         'tracking_no',
     ];
+
+    public function orderitems(){
+        return $this->hasMany(OrderItem::class);
+    }
 }

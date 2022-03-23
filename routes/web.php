@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,7 @@ use App\Http\Controllers\Frontend\CheckoutController;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+//  return view('welcome');
 // });
 
 Auth::routes();
@@ -43,6 +44,8 @@ Route::middleware(['auth'])->group(function (){
     Route::get('cart',[CartController::class,'viewCart']);
     Route::get('checkout',[CheckoutController::class,'index']);
     Route::post('place-order',[CheckoutController::class,'placeOrder']);
+    Route::get('my-orders',[UserController::class,'index']);
+    Route::get('view-order/{id}',[UserController::class,'viewOrder']);
    
 
 });

@@ -42,6 +42,15 @@ class CheckoutController extends Controller
         $order->address2    = $req->input('address2');
         $order->city        = $req->input('city');
         $order->country     = $req->input('country');
+        
+        //total
+        $total = 0;
+        $cartitems_total = Cart::where('user_id',Auth::id())->get();
+        foreach($cartitems_total as $item){
+            $total+= $item->products->selling_price;
+        }
+        $order->total = $total;
+        
         $order->division    = $req->input('division');
         $order->pincode     = $req->input('pincode');
         $order->tracking_no = rand(100000,999999);
@@ -59,6 +68,8 @@ class CheckoutController extends Controller
         
         }
 
+
+
         if(Auth::user()->address1 == NULL){
         
         $user = User::where('id',Auth::id())->first();
@@ -74,8 +85,8 @@ class CheckoutController extends Controller
         $user->update();
         
     }
-
         Cart::destroy($cartitems);
         return redirect('/')->with('status',"Order Placed Successfully");
     }
 }
+
