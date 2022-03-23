@@ -24,7 +24,7 @@ class UserController extends Controller
 
     
     public function viewOrder($id){
-        $order = Order::where('id',$id)->where('user_id',Auth::id())->firstgit();
+        $order = Order::where('id',$id)->where('user_id',Auth::id())->first();
         return view('frontend.order.view',["orders"=>$order]);
     }
 
