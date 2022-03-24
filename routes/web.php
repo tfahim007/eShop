@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\OrderController;
+
 
 use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\CartController;
@@ -73,5 +75,8 @@ Route::group(['middleware' => ['auth','isAdmin']], function () {
     Route::put('update-product/{id}',[ProductController::class,'update']);
     Route::get('delete-product/{id}',[ProductController::class,'destroy']);
 
+    //ORDERS
+    Route::get('orders',[OrderController::class,'index']);
+    Route::get('admin/view-order/{id}',[OrderController::class,'viewOrder']);
 
  });

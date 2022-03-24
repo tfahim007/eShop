@@ -1,14 +1,14 @@
-@extends('layouts.front');
+@extends('layouts.admin')
 @section('title')
-    Order Details
+    View Order Details
 @endsection
 
 @section('content')
-<div class="container mt-4">
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-default">
+                <div class="card-header bg-gradient-light">
                     <h3>Order Details
                         <a href="{{url('my-orders')}}"><button class="btn btn-primary-outline float-end">Back</button></a>
                     </h3>
@@ -20,20 +20,20 @@
                                 <h4>Shipping Details</h4>
                                 <hr>
                                 <label for="">First Name</label>
-                                <div class="border p-2">{{ $orders->fname}} </div><br>
+                                <div class="border p-2">{{ $orders->fname}} </div>
                                 <label for="">Last Name</label>
-                                <div class="border p-2">{{ $orders->lname}} </div><br>
+                                <div class="border p-2">{{ $orders->lname}} </div>
                                 <label for="">Email</label>
-                                <div class="border p-2">{{ $orders->email}}</div><br>
+                                <div class="border p-2">{{ $orders->email}}</div>
                                 <label for="">Phone</label>
-                                <div class="border p-2">{{$orders->phone}}</div><br>
+                                <div class="border p-2">{{$orders->phone}}</div>
                                 <label for="">Shipping Address</label>
                                 <div class="border p-2">
                                     {{ $orders->address1}}, {{ $orders->address2}}, {{ $orders->city}}, {{ $orders->division}} 
-                                </div><br>
+                                </div>
                                 <label for="">Zip Code</label>
                                 <div class="border p-2">{{ $orders->pincode}} </div>
-                            </div><br>
+                            </div>
                             <div class="col-md-6">
                                 <h4>Order Items</h4>
                                 <hr>
@@ -59,7 +59,21 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <h5>Grand Total: <span class="float-end">Tk. {{$orders->total}}</span></h5>
+                                <h5 class= 'px-2'>Grand Total: <span class="float-end">Tk. {{$orders->total}}</span></h5>
+
+                                <div class="mt-2">
+                                    
+                                    <form action="{{url('update-order/'.$orders->id)}}" method="PUT">
+                                        @csrf
+                                        @method('PUT')
+                                        <select name="order-status" class="form-select">
+                                            <option  value="{{ $item->status==0?'selected':''}}">Pending</option>
+                                            <option value="{{ $item->status==1?'selected':''}}"> Completed</option>
+                                        </select>
+                                        
+                                        <button type="submit" class="btn btn-primary float-end"> Update</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -67,6 +81,5 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
 @endsection
-
