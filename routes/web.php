@@ -59,6 +59,7 @@ Route::group(['middleware' => ['auth','isAdmin']], function () {
 
     Route::get('dashboard',[FrontendController::class,'index']);
     Route::get('users',[FrontendController::class,'users']);
+    Route::get('view-users/{id}',[FrontendController::class,'viewUser']);
 
     // Categories
     Route::get('categories',[CategoryController::class,'index']);

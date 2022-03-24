@@ -7,7 +7,7 @@
         </div>
         <hr>
         <div class="card-body">
-            <table class="table table-border table-striped">
+            <table class="table table-bordered ">
                 <thead>
                     <tr>
                         <td>Id</td>
@@ -27,12 +27,9 @@
                                 <img src="{{asset('assets/uploads/category/'.$item->image)}}" alt="" class="cate-image">
                             </td>
                             <td>
-                                <button class="btn btn-primary">
-                                    <a href="{{url('edit-category',$item->id)}}">Edit</a>
-                                </button>
-                                <button class="btn btn-danger">
-                                    <a href="{{url('delete-category',$item->id)}}">Edit</a>
-                                </button>
+                                <a href="{{url('edit-category',$item->id)}}" class=" mt-6 btn bg-success text-white">Edit</a>
+                                <a href="{{url('delete-category',$item->id)}}" class="mt-6 btn bg-danger text-white">Delete</a>
+                                
                             </td>
                         </tr>
                     @endforeach
