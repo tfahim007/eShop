@@ -33,12 +33,11 @@
                                 <img src="{{asset('assets/uploads/product/'.$item->image)}}" alt="" class="cate-image-product">
                             </td>
                             <td>
-                                <button class="btn btn-primary btn-sm">
-                                    <a href="{{url('edit-product',$item->id)}}">Edit</a>
-                                </button>
-                                <button class="btn btn-danger btn-sm">
-                                    <a href="{{url('delete-product',$item->id)}}">Delete</a>
-                                </button>
+                                <a href="{{url('edit-product',$item->id)}}" class=" mt-3
+                                     btn bg-success btn-sm text-white">Edit</a>
+                                <a href="{{url('delete-product',$item->id)}}" class=" mt-3 btn bg-danger btn-sm text-white">Delete</a>
+
+                                
                             </td>
                         </tr>
                     @endforeach
