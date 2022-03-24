@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\WishlistController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +40,7 @@ Route::get('category/{slug}/{prodslug}',[FrontController::class,'viewProduct']);
 Route::post('add-to-cart',[CartController::class,'addProduct']);
 Route::post('delete-cart-item',[CartController::class,'deleteProduct']);
 Route::post('update-cart',[CartController::class,'updateCart']);
+Route::post('add-to-wishlist',[WishlistController::class,'addProduct']);
 
 
 // Cart
@@ -82,5 +84,8 @@ Route::group(['middleware' => ['auth','isAdmin']], function () {
     Route::get('admin/view-order/{id}',[OrderController::class,'viewOrder']);
     Route::get('update-order/{id}',[OrderController::class,'updateOrder']);
     Route::get('order-history',[OrderController::class,'orderHistory']);
+
+    //WISHLIST
+    Route::get('wishlist',[WishlistController::class,'index']);
 
  });

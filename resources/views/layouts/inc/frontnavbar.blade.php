@@ -16,6 +16,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{url('cart')}}"><i class="fa fa-shopping-cart"> </i>&nbsp;Cart</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('wishlist')}}"><i class="fa fa-heart"> </i>&nbsp;Wishlist</a>
+          </li>
           
            <!-- Authentication Links -->
         @guest
