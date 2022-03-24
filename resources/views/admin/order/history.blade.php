@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    Orders
+    History
 @endsection
 
 @section('content')
@@ -10,8 +10,8 @@
                 <div class="card">
                     <div class="card-header bg-gradient-light">
                         <h3>
-                            New Orders
-                            <a href="{{url('order-history')}}" class="btn btn-success float-end"> History</a>
+                            Completed Orders
+                            <a href="{{url('orders')}}" class="btn btn-success float-end"> New Orders</a>
 
                         </h3>
                     </div>

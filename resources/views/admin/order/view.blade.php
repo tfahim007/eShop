@@ -59,19 +59,20 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                <h5 class= 'px-2'>Grand Total: <span class="float-end">Tk. {{$orders->total}}</span></h5>
+                                <h6 class= 'px-2'>Grand Total: <span class="float-end">Tk. {{$orders->total}}</span></h6>
 
-                                <div class="mt-2">
-                                    
+                                <div class="mt-5 px-2">
+
                                     <form action="{{url('update-order/'.$orders->id)}}" method="PUT">
                                         @csrf
                                         @method('PUT')
+                                        <label for=""> Order Status</label>
                                         <select name="order-status" class="form-select">
-                                            <option  value="{{ $item->status==0?'selected':''}}">Pending</option>
-                                            <option value="{{ $item->status==1?'selected':''}}"> Completed</option>
+                                            <option {{ $item->status==0?'selected':''}} value="0">Pending</option>
+                                            <option {{ $item->status==1?'selected':''}} value="1"> Completed</option>
                                         </select>
                                         
-                                        <button type="submit" class="btn btn-primary float-end"> Update</button>
+                                        <button type="submit" class="btn btn-primary float-end mt-3"> Update</button>
                                     </form>
                                 </div>
                             </div>
