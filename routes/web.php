@@ -40,7 +40,9 @@ Route::get('category/{slug}/{prodslug}',[FrontController::class,'viewProduct']);
 Route::post('add-to-cart',[CartController::class,'addProduct']);
 Route::post('delete-cart-item',[CartController::class,'deleteProduct']);
 Route::post('update-cart',[CartController::class,'updateCart']);
+
 Route::post('add-to-wishlist',[WishlistController::class,'addProduct']);
+Route::post('delete-wishlist-item',[WishlistController::class,'deleteProduct']);
 
 
 // Cart

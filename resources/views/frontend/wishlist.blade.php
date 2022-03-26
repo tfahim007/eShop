@@ -19,9 +19,40 @@
 @endphp
 <div class="container my-5">
     <div class="card shadow ">
+        <div class="card-header bg-gradient-light">
+            <h2>Wishlist Items</h2>
+        </div>
         @if ($wishlists->count() > 0)
             <div class="card-body">
-              <h1> ther</h1>   
+                @foreach ($wishlists as $item)
+                    <div class="row shadow mb-2 product_data">
+
+                        <div class="col-md-2">
+                            <img src="{{ asset('assets/uploads/product/'.$item->products->image)}}" style="width:100px;height:100px;" alt="Item Image">
+                        </div>
+
+                        <div class="col-md-5">
+                            <h5>{{ $item->products->name }}</h5>
+                        </div>
+
+                        <div class="col-md-3 my-auto">
+                            <input type="hidden" class="prod_data" value="{{ $item->prod_id}}">
+                            @if ($item->products->qty > $item->prod_qty)
+                                <h6>In Stock</h6>
+                            @else
+                                <h6>Out of Stock</h6>
+                            @endif
+                            
+                        </div>
+
+                        <div class="col-md-2 mt-4">
+                            {{-- <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button> --}}
+                            <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button>
+                        </div>
+                        
+                    </div>
+                    
+                @endforeach  
                 
                 
             </div>
