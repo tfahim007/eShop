@@ -53,6 +53,7 @@ Route::middleware(['auth'])->group(function (){
     Route::get('my-orders',[UserController::class,'index']);
     Route::get('view-order/{id}',[UserController::class,'viewOrder']);
    
+    Route::get('wishlist',[WishlistController::class,'index']);
 
 });
 
@@ -88,6 +89,5 @@ Route::group(['middleware' => ['auth','isAdmin']], function () {
     Route::get('order-history',[OrderController::class,'orderHistory']);
 
     //WISHLIST
-    Route::get('wishlist',[WishlistController::class,'index']);
 
  });
