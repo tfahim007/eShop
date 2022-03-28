@@ -8,16 +8,25 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{url('/')}}"><i class="fa fa-home"></i>&nbsp;Home </a>
+            <a class="nav-link {{ Request::is('/')?'active':'' }}" aria-current="page" href="{{url('/')}}"><i class="fa fa-home"></i>&nbsp;Home </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('category')}}"><i class="fa fa-list"></i> &nbsp; Categories </a>
+            <a class="nav-link {{ Request::is('category')?'active':'' }}" href="{{url('category')}}"><i class="fa fa-list"></i> &nbsp; Categories </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('cart')}}"><i class="fa fa-shopping-cart"> </i>&nbsp;Cart</a>
+            <a class="nav-link {{ Request::is('cart')?'active':'' }}" href="{{url('cart')}}">
+              <i class="fa fa-shopping-cart"> </i>&nbsp;Cart
+              <span class="badge badge-pill bg-success cart-navcount">0</span>
+            </a>
+            
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('wishlist')}}"><i class="fa fa-heart"> </i>&nbsp;Wishlist</a>
+            <a class="nav-link {{ Request::is('wishlist')?'active':'' }}" href="{{url('wishlist')}}">
+              <i class="fa fa-heart"> </i>&nbsp;Wishlist
+            <span class="badge badge-pill bg-primary wishlist-navcount">0</span>
+
+            </a>
+
           </li>
           
            <!-- Authentication Links -->

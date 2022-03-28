@@ -33,6 +33,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Frontend
+
 Route::get('/',[FrontController::class,'index']);
 Route::get('category',[FrontController::class,'category']);
 Route::get('view-category/{slug}',[FrontController::class,'viewCategory']);
@@ -40,6 +41,10 @@ Route::get('category/{slug}/{prodslug}',[FrontController::class,'viewProduct']);
 Route::post('add-to-cart',[CartController::class,'addProduct']);
 Route::post('delete-cart-item',[CartController::class,'deleteProduct']);
 Route::post('update-cart',[CartController::class,'updateCart']);
+
+//NAV WISHLIST AND CART COUNT
+Route::get('load-cart-data',[CartController::class,'cartCount']);
+Route::get('load-wishlist-data',[WishlistController::class,'wishlistCount']);
 
 Route::post('add-to-wishlist',[WishlistController::class,'addProduct']);
 Route::post('delete-wishlist-item',[WishlistController::class,'deleteProduct']);

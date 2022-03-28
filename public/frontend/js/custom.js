@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    loadCart();
+    loadWishlist();
+
     //ADD TO CART BUTTON
     $('.addToCartBtn').click(function(e){
         e.preventDefault();
@@ -21,6 +24,7 @@ $(document).ready(function () {
             },
             success: function (response){
                 swal(response.status);
+                loadCart();
             }
         });
     });
@@ -44,6 +48,7 @@ $(document).ready(function () {
             },
             success: function (response){
                 swal(response.status);
+                loadWishlist();
             }
         });
     });
@@ -165,4 +170,29 @@ $(document).ready(function () {
 
         
     });
+
+
+    //NAV WISHLIST AND CART COUNT
+    function loadCart(){
+        $.ajax({
+            method: "GET",
+            url: "/load-cart-data",
+            success: function (response){
+              $('.cart-navcount').html(response.count);
+                
+            }
+        
+        });
+    }
+    function loadWishlist(){
+        $.ajax({
+            method: "GET",
+            url: "/load-wishlist-data",
+            success: function (response){
+              $('.wishlist-navcount').html(response.count);
+                
+            }
+        
+        });
+    }
 });
