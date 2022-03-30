@@ -18,7 +18,7 @@
     $total = 0;
 @endphp
 <div class="container my-5">
-    <div class="card shadow ">
+    <div class="card shadow wishlistitem ">
         <div class="card-header bg-gradient-light">
             <h2>Wishlist Items</h2>
         </div>
@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="col-md-3 my-auto">
-                            <input type="hidden" class="prod_data" value="{{ $item->prod_id}}">
+                            <input type="hidden" class="prod_id" value="{{ $item->prod_id}}">
                             @if ($item->products->qty > $item->prod_qty)
                                 <h6>In Stock</h6>
                             @else
@@ -48,6 +48,10 @@
                         <div class="col-md-2 mt-4">
                             {{-- <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button> --}}
                             <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button>
+                        </div>
+                        <div class="col-md-2 mt-4">
+                            <button class="btn btn-success addToCartBtn">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+
                         </div>
                         
                     </div>

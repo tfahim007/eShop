@@ -52,7 +52,6 @@
       @yield('content')
       
     </div>
-
   </main>
 <!--   Core JS Files   -->
 <!-- Font Awesome Icons -->

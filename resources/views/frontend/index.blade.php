@@ -22,8 +22,7 @@
                                             <span class="float-end"> <s><b>Tk.{{ $item->selling_price}}</b></s> </span>
                                         </div>
                                     </div>
-                                </a>
-                                
+                                </a>   
                             </div>
                         @endforeach ($featured_products as $item)
                     </div>
