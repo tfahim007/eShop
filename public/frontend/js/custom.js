@@ -107,7 +107,7 @@ $(document).ready(function () {
     $('.delete-wishlist-item').click(function(e){
         e.preventDefault();
 
-        var prod_id = $(this).closest('.product_data').find('.prod_data').val();
+        var prod_id = $(this).closest('.product_data').find('.prod_id').val();
 
         $.ajaxSetup({
             headers:{

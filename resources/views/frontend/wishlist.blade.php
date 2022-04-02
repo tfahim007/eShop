@@ -31,12 +31,12 @@
                             <img src="{{ asset('assets/uploads/product/'.$item->products->image)}}" style="width:100px;height:100px;" alt="Item Image">
                         </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-4 mt-4">
                             <h5>{{ $item->products->name }}</h5>
                         </div>
 
-                        <div class="col-md-3 my-auto">
-                            <input type="hidden" class="prod_data" value="{{ $item->prod_id}}">
+                        <div class="col-md-2 my-auto">
+                            <input type="hidden" class="prod_id" value="{{ $item->prod_id}}">
                             @if ($item->products->qty > $item->prod_qty)
                                 <h6>In Stock</h6>
                             @else
@@ -46,10 +46,12 @@
                         </div>
 
                         <div class="col-md-2 mt-4">
-                            {{-- <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button> --}}
-                            <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button>
+                            <button class="btn btn-success addToCartBtn"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
                         </div>
                         
+                        <div class="col-md-2 mt-4">
+                            <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button>
+                        </div>
                     </div>
                     
                 @endforeach  
