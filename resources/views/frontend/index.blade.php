@@ -23,6 +23,7 @@
                                         </div>
                                     </div>
                                 </a>
+                                
                             </div>
                         @endforeach ($featured_products as $item)
                     </div>

@@ -65,4 +65,10 @@ class WishlistController extends Controller
         }
 
     }
+
+    public function wishlistCount(){
+        $wishlist = Wishlist::where('user_id',Auth::id())->count();
+        return response()->json(["count"=>$wishlist]);
+
+    }
 }

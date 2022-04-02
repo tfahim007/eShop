@@ -31,8 +31,8 @@
                             
                         </h2>
                         <hr>
-                        <label for="" class="me-3">Original Price: <s> Tk: {{ $product->original_price}}</s></label>
-                        <label for="" class="fw-bold"> Selling Price:  Tk: {{ $product->selling_price}}</label>
+                        <label for="" class="me-3">Original Price: <s> Tk: {{ $product->selling_price}}</s></label>
+                        <label for="" class="fw-bold"> Discounted Price:  Tk: {{ $product->original_price}}</label>
 
                         <p class="mt-3">
                             {{$product->description}}
