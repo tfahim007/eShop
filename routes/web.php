@@ -13,6 +13,9 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\WishlistController;
+
+use App\Http\Controllers\SslCommerzPaymentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

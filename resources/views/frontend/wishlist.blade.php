@@ -31,7 +31,7 @@
                             <img src="{{ asset('assets/uploads/product/'.$item->products->image)}}" style="width:100px;height:100px;" alt="Item Image">
                         </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <h5>{{ $item->products->name }}</h5>
                         </div>
 
@@ -46,11 +46,13 @@
                         </div>
 
                         <div class="col-md-2 mt-4">
+
+                            <button class="btn btn-success addToCartBtn">Add To Cart <i class="fa fa-shopping-cart"></i></button>
                             {{-- <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button> --}}
-                            <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button>
                         </div>
                         <div class="col-md-2 mt-4">
-                            <button class="btn btn-success addToCartBtn">Add To Cart <i class="fa fa-shopping-cart"></i></button>
+                            <button class="btn btn-danger delete-wishlist-item"><i class="fa fa-trash"></i>Remove</button>
+
 
                         </div>
                         
